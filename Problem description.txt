@@ -1,0 +1,53 @@
+Here is the list of variables (columns in the downloaded csv file):
+
+(int) "id",
+
+(char) "question_answer_or_comment" (Q=Question, A=Answer, C=Comment), 
+
+(bool) "is_best_answer",
+
+(int) "topic_id",
+
+(int) "parent_id",
+
+(int) "votes",
+
+(string) "titre",
+
+(string) "message",
+
+(int) "member", 
+
+(int) "category", 
+
+(int) "state" (0=deleted, 1=online, 2=online but closed),
+
+(bool) "is_solved", 
+
+(int) "num_answers",
+
+(string) "country", 
+
+(unix_timestamp) "date",
+
+(unix_timestamp) "last_answer_date", 
+
+(int) "auteur_crc", 
+
+(int) "visits"
+
+
+You will be asked to predict/find the best answer if any exists (see is_best_answer). Note that, there are many questions with no answer or no best answer. The best answer was usually the one that received the most votes. Of course, if the message was deleted, it's not the best answer.
+
+
+The value of the field/column/variable "question_answer_or_comment" indicates whether the corresponding line is a Question (Q), an answer (A) to a question (use parent_id to retrieve the question to which the answer is given), or a comment (which is usually associated to an answer).
+
+
+Please note that, one question can have multiple answers (that is why you will be finding out the best one), and one answer can have multiple comments.
+
+
+Advice: you don't need to use all the variables available. You can start by using only Questions and Answers (i.e., not comments), and then add comments to your models if they could improve the performance of your model.
+
+
+Please find attached a python script containing some helpful functions that may help you in building your model.
+
